@@ -240,6 +240,9 @@ class _ChatMessagesViewState extends State<ChatMessagesView> {
               onSendBtnTap: (text) {
                 var msg = EMMessage.createTxtSendMessage(
                     targetId: widget.conversation.id, content: text);
+                msg.attributes = {
+                  'expert': true,
+                };
                 msg.chatType = ChatType.values[widget.conversation.type.index];
                 EMMessage? willSend;
                 if (widget.willSendMessage != null) {

@@ -6,8 +6,8 @@ import 'package:em_chat_uikit_example/custom_video_message/custom_message_page.d
 import 'package:em_chat_uikit_example/messages_page.dart';
 
 class ChatConfig {
-  static const String appKey = 'easemob-demo#flutter';
-  static const String userId = 'du002';
+  static const String appKey = '1145230613161200#demo';
+  static const String userId = '1_tom';
   static const String password = '1';
 }
 
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Easemob Assistant',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Easemob Assistant'),
     );
   }
 }
@@ -108,17 +108,19 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             const SizedBox(height: 10),
+            Row(children: [
+              Expanded(
+                child: TextField(
+                  decoration: const InputDecoration(
+                    hintText: "Enter recipient's userId",
+                  ),
+                  onChanged: (chatId) => _chatId = chatId,
+                ),
+              ),
+            ]),
+            const SizedBox(height: 10),
             Row(
               children: [
-                Expanded(
-                  child: TextField(
-                    decoration: const InputDecoration(
-                      hintText: "Enter recipient's userId",
-                    ),
-                    onChanged: (chatId) => _chatId = chatId,
-                  ),
-                ),
-                const SizedBox(height: 10),
                 Row(
                   children: [
                     TextButton(

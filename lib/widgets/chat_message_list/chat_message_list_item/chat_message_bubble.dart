@@ -151,6 +151,39 @@ class ChatMessageBubble extends StatelessWidget {
         ],
       );
     }
+
+    //  add options view for message
+    if (message.attributes != null && message.attributes!.isNotEmpty) {
+      message.attributes!.forEach((key, value) {
+        if (key == 'expert') {
+          return;
+        }
+        // ignore: avoid_print
+        insideBubbleWidgets.add(
+          Container(
+            padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 0, 255, 8),
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: Colors.blue, width: 2),
+            ),
+            constraints: const BoxConstraints(maxWidth: 10),
+            child: SelectableText(
+              '$key: $value',
+              style: const TextStyle(color: Colors.grey, fontSize: 14),
+            ),
+          ),
+        );
+      });
+      List<Widget> listWigets = [content];
+      listWigets.addAll(insideBubbleWidgets);
+      insideBubbleWidgets.clear();
+      content = Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: listWigets,
+      );
+    }
+
     return content;
   }
 }

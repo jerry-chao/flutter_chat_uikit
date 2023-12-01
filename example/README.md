@@ -1,16 +1,18 @@
-# em_chat_uikit_example
+# assistant
 
-Demonstrates how to use the em_chat_uikit plugin.
+演示demo，探索环信IM服务如何和AI相关的服务进行密切的配置，以达到提升专业人士的效能最大化
 
-## Getting Started
+## 功能列表
 
-This project is a starting point for a Flutter application.
+- 能够辅助进行简单的回复
+	- 比如简单的问候
+- 给出适当的建议，能够根据给出的提示辅助专家
 
-A few resources to get you started if this is your first Flutter project:
+## 实现功能列表
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- 跑通flutter的demo 能够正常的登录发消息
+- 集成minimax的AI接口
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## TODO 列表
+
+- 发送者的消息建议
